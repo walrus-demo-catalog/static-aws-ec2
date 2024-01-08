@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI schema for template static-aws-ec2
+components:
+  schemas:
+    variables:
+      type: object
+      required:
+      - instance_id
+      - instance_name
+      - private_ip
+      properties:
+        instance_name:
+          title: Instance Name
+          type: string
+          description: The instance name of the EC2 instance
+          x-walrus-ui:
+            order: 1
+        instance_id:
+          title: Instance ID
+          type: string
+          description: The instance id of the EC2 instance
+          x-walrus-ui:
+            order: 2
+        private_ip:
+          title: Private IP
+          type: string
+          description: The private IP of the EC2 instance
+          x-walrus-ui:
+            order: 3
+        public_ip:
+          title: Public IP
+          type: string
+          description: The public IP of the EC2 instance
+          default: ""
+          nullable: true
+          x-walrus-ui:
+            order: 4
+        key_name:
+          title: Key Name
+          type: string
+          description: Name of the ssh private key
+          default: seal-aws-tokyo
+          nullable: true
+          x-walrus-ui:
+            order: 5
